@@ -3,9 +3,23 @@ extern crate rcalc;
 use rcalc::Interpreter;
 
 fn main() {
-    let expr = "8*86";
-    let mut pr = Interpreter::from(expr);
-    let result= pr.interpret().unwrap();
-    println!("{}",result);
-
+    let op = vec!["+", "-", "*", "/", ""];
+    // let op = vec!["*", ""];
+    for i in 1000..10000 {
+        let c = i.to_string();
+        for j in &op {
+            for k in &op {
+                for l in &op {
+                    let expr = format!("{}{}{}{}{}{}{}", &c[3..], j, &c[2..3], k, &c[1..2], l, &c[0..1]);
+                    if expr.len() > 4 {
+                        let mut pr = Interpreter::from(&expr);
+                        let result = pr.interpret().unwrap().round() as i64;
+                        if i == result {
+                            println!( "{}", expr);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
