@@ -1,0 +1,7 @@
+[package]
+name = "iapp_q02"
+version = "0.1.0"
+authors = ["Xanadu Zhang <yeahnoob@buaa.edu.cn>"]
+
+[dependencies]
+rcalc = "^0.1"
