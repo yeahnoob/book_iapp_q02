@@ -24,7 +24,7 @@ fn main() {
                         let mut pr = Interpreter::from(&expr);
                         let result = pr.interpret().unwrap().round() as i64;
                         if i == result {
-                            println!("{}", expr);
+                            println!("{} = {}", expr, result);
                         }
                     }
                 }
